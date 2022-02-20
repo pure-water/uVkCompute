@@ -35,7 +35,7 @@ FMA Dispatch( Type 0) | FMA Dispatch ( Type 1）
 
 # Conclusion
 
-It appears that only the independent stream can take advantage of the extra FP32 streaming. 
+It appears that only the independent stream can take advantage of the extra FP32 streaming.  Hmm, that  really makes the feature a bit of ambigouls marketing feature! 
 |   | FP32/FP16|
 |---|---|
 |FMA Dispatch Type0 | 1X|
