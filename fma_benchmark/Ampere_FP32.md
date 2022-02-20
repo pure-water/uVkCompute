@@ -21,19 +21,22 @@ FMA Dispatch( Type 0) | FMA Dispatch ( Type 1）
 |---|---|
 |![image](https://user-images.githubusercontent.com/2059536/154829563-6309d675-d190-4eec-8deb-d729c85bbc92.png) | ![image](https://user-images.githubusercontent.com/2059536/154829570-d76f1222-a8b1-4665-82cc-691dcc2c5211.png) |
 
-BenchMark | Type 0 Flops   | Type 1 Flops
-|---|---|---|
-|
-
-![image](https://user-images.githubusercontent.com/2059536/154830478-c9175460-bbee-4377-ac8d-5620e3eea226.png)
-![image](https://user-images.githubusercontent.com/2059536/154830491-a2aa93d6-6860-4814-b303-36589043790b.png)
-![image](https://user-images.githubusercontent.com/2059536/154830497-c98f660c-9656-4aa3-b13d-d6b7f07ebd11.png)
-![image](https://user-images.githubusercontent.com/2059536/154830525-c562bc83-df81-4aa0-826b-b9f57d33ce2e.png)
-![image](https://user-images.githubusercontent.com/2059536/154830615-339e3d92-d2fd-4562-9961-f704a8d304ca.png)
 
 
-|![image](https://user-images.githubusercontent.com/2059536/154829647-5b3bc8c3-a6d9-4e02-a153-2feb179b4b33.png "FMA Type0 workload )  | ![image](https://user-images.githubusercontent.com/2059536/154830352-8f9e8d4b-334a-4b10-97ca-aa622117eff3.png)|
+| <b>FMA Type0 Dispatch Workload</b>|
+|---|
+|![image](https://user-images.githubusercontent.com/2059536/154829647-5b3bc8c3-a6d9-4e02-a153-2feb179b4b33.png ) |
+
+| <b>FMA Type1 Dispatch Workload</b>|
+|---|
+|![image](https://user-images.githubusercontent.com/2059536/154830352-8f9e8d4b-334a-4b10-97ca-aa622117eff3.png)|
 
 
+#Conclusion
 
+It appears that only the independent stream can take advantage of the extra FP32 streaming. 
+|   | FP32/FP16|
+|---|---|
+|FMA Dispatch Type0 | 1X|
+|FMA Dispatch Type1 | 2X|
 
