@@ -1,3 +1,4 @@
+# Background
 In the Ampere Architecture, an extra FP32 pipeline is added and Nvidia is claiming it has 2X-FP32 processing as below. 
 ![image](https://user-images.githubusercontent.com/2059536/154828748-ba458ecc-d491-4217-8cce-a9f935a236be.png)
 
@@ -5,7 +6,7 @@ It is interesting to see how the extra FP32 pipeline is used along the normal FP
  - Use the extra FP32 pipeline as the co-issue pipeline whereby you can only use it when there is dependancy. This one is relatively simple hardware design but 
  - Use the extra FP32 pipeline as the normal pipeline whereby the wider instances can be issued to this pipeline. This one has the highest utilization of the pipeline but with a higher hardware bill cost. 
 
-
+# Configuration
 We use the following hardware to disinsect the truth of the Ampere architecture. 
 
 
@@ -14,7 +15,7 @@ We use the following hardware to disinsect the truth of the Ampere architecture.
 ![image](https://user-images.githubusercontent.com/2059536/154828954-8784cbf6-0810-4492-a02f-6890b5c5309c.png)  | ![image](https://user-images.githubusercontent.com/2059536/154829274-2f71fb10-3769-4f98-adc7-df5ff563d581.png)
 
 
-
+# Results
 We based our work on uVkCompute benchmark. We modifed the code to test whether the extra pipeline can only be co-issued or a more of a native choice. 
 
 FMA Dispatch( Type 0) | FMA Dispatch ( Type 1） 
@@ -32,7 +33,7 @@ FMA Dispatch( Type 0) | FMA Dispatch ( Type 1）
 |![image](https://user-images.githubusercontent.com/2059536/154830352-8f9e8d4b-334a-4b10-97ca-aa622117eff3.png)|
 
 
-#Conclusion
+# Conclusion
 
 It appears that only the independent stream can take advantage of the extra FP32 streaming. 
 |   | FP32/FP16|
