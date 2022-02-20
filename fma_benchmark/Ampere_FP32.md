@@ -1,5 +1,5 @@
 # Background
-In the Ampere Architecture, an extra FP32 pipeline is added and Nvidia is claiming it has 2X-FP32 processing as below. 
+In the Ampere Architecture （as released https://images.nvidia.com/aem-dam/en-zz/Solutions/geforce/ampere/pdf/NVIDIA-ampere-GA102-GPU-Architecture-Whitepaper-V1.pdf), an extra FP32 pipeline is added and Nvidia is claiming it has 2X-FP32 processing as below.  
 ![image](https://user-images.githubusercontent.com/2059536/154828748-ba458ecc-d491-4217-8cce-a9f935a236be.png)
 
 It is interesting to see how the extra FP32 pipeline is used along the normal FP32 pipeline. There are 2 choices from the architecture of view.
