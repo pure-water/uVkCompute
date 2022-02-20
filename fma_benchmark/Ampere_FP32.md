@@ -24,11 +24,11 @@ FMA Dispatch( Type 0) | FMA Dispatch ( Type 1）
 
 
 
-| <b>FMA Type0 Dispatch Workload</b>|
+| <b>FMA Type0 workload Dispatch </b>|
 |---|
 |![image](https://user-images.githubusercontent.com/2059536/154829647-5b3bc8c3-a6d9-4e02-a153-2feb179b4b33.png ) |
 
-| <b>FMA Type1 Dispatch Workload</b>|
+| <b>FMA Type1 Workload Dispatch </b>|
 |---|
 |![image](https://user-images.githubusercontent.com/2059536/154830352-8f9e8d4b-334a-4b10-97ca-aa622117eff3.png)|
 
