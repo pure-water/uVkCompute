@@ -6,7 +6,7 @@ It is interesting to see how the extra FP32 pipeline is used along the normal FP
 
 - Use the extra FP32 pipeline as the normal pipeline whereby the wider instances can be issued to this pipeline.Effectively double the warp width (which should be from 16 to 32 in this context).  This will lead to the highest utilization of the pipeline but with a higher hardware bill cost. 
 
-- Use the extra FP32 pipeline as the co-issue pipeline whereby you can only use it when there are more than 2 "streams" which are not dependent of each other. This one is relatively simple hardware design but not an "efficient use" of the hardware resource actually. But presumably in the modern gaming workload there might be a few such opportunisitic window.
+- Use the extra FP32 pipeline as the co-issue pipeline whereby you can only use it when there are more than 2 "streams" which are independent of each other. This architecure demands relatively simple hardware design but not an "efficient use" of the hardware resource actually. But presumably in the modern gaming workload there might be a few such opportunisitical windows for this to be used.
  
 # Configuration
 We use the following hardware to dissect the truth of the Ampere architecture. 
@@ -18,7 +18,11 @@ We use the following hardware to dissect the truth of the Ampere architecture.
 
 
 # Results
-We based our work on uVkCompute benchmark. We modifed the code to test whether the extra pipeline can only be co-issued or a more of a native choice. 
+We based our work on uVkCompute benchmark. We modifed the shader code to have the independent stream to test whether the extra pipeline can only be co-issued or a more of a native choice. There are 2 types of workload being crafted: 
+
+- Type 0: there is only one stream of FMA workload dispatching to the shader
+- Type 1：there are two streams of FMA which is dependent of each other 
+
 
 FMA Dispatch( Type 0) | FMA Dispatch ( Type 1） 
 |---|---|
