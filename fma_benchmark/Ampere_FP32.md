@@ -2,12 +2,14 @@
 In the Ampere Architecture （as released https://images.nvidia.com/aem-dam/en-zz/Solutions/geforce/ampere/pdf/NVIDIA-ampere-GA102-GPU-Architecture-Whitepaper-V1.pdf), an extra FP32 pipeline is added and Nvidia is claiming it has 2X-FP32 processing as below.  
 ![image](https://user-images.githubusercontent.com/2059536/154828748-ba458ecc-d491-4217-8cce-a9f935a236be.png)
 
-It is interesting to see how the extra FP32 pipeline is used along the normal FP32 pipeline. There are 2 choices from the architecture of view.
- - Use the extra FP32 pipeline as the co-issue pipeline whereby you can only use it when there is dependancy. This one is relatively simple hardware design but 
- - Use the extra FP32 pipeline as the normal pipeline whereby the wider instances can be issued to this pipeline. This one has the highest utilization of the pipeline but with a higher hardware bill cost. 
+It is interesting to see how the extra FP32 pipeline is used along the normal FP32 pipeline. There are 2 choices from the architecture point of view.
 
+- Use the extra FP32 pipeline as the normal pipeline whereby the wider instances can be issued to this pipeline.Effectively double the warp width (which should be from 16 to 32 in this context).  This will lead to the highest utilization of the pipeline but with a higher hardware bill cost. 
+
+- Use the extra FP32 pipeline as the co-issue pipeline whereby you can only use it when there are more than 2 "streams" which are not dependent of each other. This one is relatively simple hardware design but not an "efficient use" of the hardware resource actually. But presumably in the modern gaming workload there might be a few such opportunisitic window.
+ 
 # Configuration
-We use the following hardware to disinsect the truth of the Ampere architecture. 
+We use the following hardware to dissect the truth of the Ampere architecture. 
 
 
 3060Ti(GA104) | A2000（GA106)
@@ -35,7 +37,7 @@ FMA Dispatch( Type 0) | FMA Dispatch ( Type 1）
 
 # Conclusion
 
-It appears that only the independent stream can take advantage of the extra FP32 streaming. 
+It appears that only the independent streams can take advantage of the extra FP32 streaming. 
 
 - A2000 reflects a bit more of the co-issue impact
 - 3060Ti's 2nd FP32 pipeline is more likely to be limited by some other factors as well
