@@ -26,6 +26,8 @@ FMA Dispatch( Type 0) | FMA Dispatch ( Type 1）
 
 
 
+
+
 | <b>FMA Type0 workload Dispatch </b>|
 |---|
 |![image](https://user-images.githubusercontent.com/2059536/154829647-5b3bc8c3-a6d9-4e02-a153-2feb179b4b33.png ) |
@@ -40,10 +42,12 @@ FMA Dispatch( Type 0) | FMA Dispatch ( Type 1）
 It appears that only the <b> independent streams </b> can take advantage of the extra FP32 streaming. 
 
 - A2000 reflects a bit more of the co-issue impact
-- 3060Ti's 2nd FP32 pipeline is more likely to be limited by some other factors as well
+- It is even harder to fully utilize the additional FP32 pipeline in more cabable GPUs (3060 Ti vs A2000) , which might be limited by some other factors
 
 |   | FP32/FP16|
 |---|---|
 |FMA Dispatch Type0 | 1X|
 |FMA Dispatch Type1 | 2X|
 
+
+date:"Last updated on `r format(Sys.time(),'%d%m%y')"
