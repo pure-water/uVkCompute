@@ -37,7 +37,7 @@ FMA Dispatch( Type 0) | FMA Dispatch ( Type 1）
 
 # Conclusion
 
-It appears that only the independent streams can take advantage of the extra FP32 streaming. 
+It appears that only the <b> independent streams </b> can take advantage of the extra FP32 streaming. 
 
 - A2000 reflects a bit more of the co-issue impact
 - 3060Ti's 2nd FP32 pipeline is more likely to be limited by some other factors as well
