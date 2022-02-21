@@ -20,8 +20,8 @@ We use the following hardware to dissect the truth of the Ampere architecture.
 # Results
 We based our work on uVkCompute benchmark. We modifed the shader code to have the independent stream to test whether the extra pipeline can only be co-issued or a more of a native choice. There are 2 types of workload being crafted: 
 
-- Type 0: there is only one stream of FMA workload dispatching to the shader
-- Type 1：there are two streams of FMA which is dependent of each other 
+- Type 0:there is only one stream of FMA workload dispatching to the shader
+- Type 1:there are two streams of FMA which is dependent of each other 
 
 
 FMA Dispatch( Type 0) | FMA Dispatch ( Type 1） 
