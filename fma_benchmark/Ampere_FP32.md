@@ -39,10 +39,7 @@ FMA Dispatch( Type 0) | FMA Dispatch ( Type 1）
 
 # Conclusion
 
-It appears that only the <b> independent streams </b> can take advantage of the extra FP32 streaming. 
-
-- A2000 reflects a bit more of the co-issue impact
-- It is even harder to fully utilize the additional FP32 pipeline in more cabable GPUs (3060 Ti vs A2000) , which might be limited by some other factors
+It appears that only the <b> independent streams </b> can take advantage of the <b> extra FP32 pipeline </b> as shown in the following table. 
 
 |   | FP32/FP16|
 |---|---|
