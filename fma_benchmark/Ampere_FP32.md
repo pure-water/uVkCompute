@@ -43,7 +43,7 @@ FMA Dispatch( Type 0) | FMA Dispatch ( Type 1）
 
 # Conclusion
 
-It appears that only the <b> independent streams </b> can take advantage of the <b> extra FP32 pipeline </b> as shown in the following table. 
+It appears that only the <b> independent streams </b> can take advantage of the <b> extra FP32 pipeline </b> as shown in the following table. Therefore, it should have been done in the "coissue" way.  
 
 |   | FP32/FP16|
 |---|---|
